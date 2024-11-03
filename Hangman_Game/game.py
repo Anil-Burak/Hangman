@@ -49,45 +49,45 @@ hangman = ['''
       |
 =========''']
 
-kelime = input("Kelimeyi girin: ")
-uzunluk = len(kelime)
-kelimedekiHarfler = list(kelime)
-dogruHarfler = []
-kullanilan_harfler = []
-sayac = 0
+word = input("Kelimeyi girin: ")
+wordLength = len(word)
+lettersInWord = list(word)
+correctLetters = []
+usedLetters = []
+count = 0
 while (True):
-    for element in kelime:
-        if element in kullanilan_harfler:
+    for element in word:
+        if element in usedLetters:
             print(element, end=" ")
         elif element == " ":
             print("/ ", end="")
         else:
             print("_ ", end="")
-    yeniHarf = input(" ")
-    if dogruHarfler == kelimedekiHarfler:
-        print(kelime)
+    newLetter = input(" ")
+    if correctLetters == lettersInWord:
+        print(word)
         print("Kazandınız.")
-    if yeniHarf in kullanilan_harfler:
+    if newLetter in usedLetters:
         print("Harf daha önce girildi")
     else:
-        kullanilan_harfler.append(yeniHarf)
-        if yeniHarf not in kelime:
-            sayac += 1
-            if (sayac < 6):
-                print(hangman[sayac])
+        usedLetters.append(newLetter)
+        if newLetter not in word:
+            count += 1
+            if (count < 6):
+                print(hangman[count])
                 print("Bulunmayan harfler: ", end="")
-                for letter in kullanilan_harfler:
-                    if letter not in kelime:
+                for letter in usedLetters:
+                    if letter not in word:
                         print(letter, end=" ")
                 print("")
-            if sayac == 6:
+            if count == 6:
                 print(hangman[6])
                 print("Hak bitti")
                 break
         else:
-            dogruHarfler.append(yeniHarf)
-            if dogruHarfler == kelimedekiHarfler:
-                print(kelime)
+            correctLetters.append(newLetter)
+            if correctLetters == lettersInWord:
+                print(word)
                 print("Kazandınız.")
                 break
 
