@@ -55,7 +55,7 @@ def check_letter(character):
     if len(character) == 1 and character.isalpha():
         return True
     else:
-        print("Doğru şekilde harf girmediniz.")
+        print("Doğru şekilde harf girmediniz. ")
         return False
 
 
