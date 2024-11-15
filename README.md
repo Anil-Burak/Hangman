@@ -6,5 +6,5 @@ send to your friend via text.
 After the input of guess letter, the game will continue
 to give the output that will be copied.
 
-Code is potato and doesn't include so much "try expect" 
-cause why would you try to crash a basic hangman game?
+Code is potato and doesn't include much "try expect" blocks
+cause why would anyone try to crash a basic hangman game?
