@@ -51,7 +51,7 @@ hangman = [" ",
 =========''']
 
 
-def harf_kontrol(character):
+def check_letter(character):
     if len(character) == 1 and character.isalpha():
         return True
     else:
@@ -78,7 +78,7 @@ while True:
         else:
             print("_ ", end="")
     newLetter = input(" ")
-    if harf_kontrol(newLetter):
+    if check_letter(newLetter):
         if newLetter in usedLetters:
             print("Harf önceden girilmiş")
             continue
